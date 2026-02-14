@@ -1,0 +1,255 @@
+<div><!DOCTYPE html></div>
+
+<div><html lang="en"></div>
+
+<div><head></div>
+
+<div><meta charset="UTF-8"></div>
+
+<div><meta name="viewport" content="width=device-width, initial-scale=1.0"></div>
+
+<div><title>Will you be my Meowlentine? 💘😻</title></div>
+
+<div><style></div>
+
+<div>  body {</div>
+
+<div>    margin: 0;</div>
+
+<div>    padding: 0;</div>
+
+<div>    font-family: 'Comic Sans MS', cursive, sans-serif;</div>
+
+<div>    background: linear-gradient(180deg, #ff9ecf, #ffcce6);</div>
+
+<div>    display: flex;</div>
+
+<div>    justify-content: center;</div>
+
+<div>    align-items: center;</div>
+
+<div>    height: 100vh;</div>
+
+<div>    text-align: center;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  .container {</div>
+
+<div>    width: 90%;</div>
+
+<div>    max-width: 400px;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  h1 {</div>
+
+<div>    color: #ff2d75;</div>
+
+<div>    font-size: 1.8rem;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  .gif {</div>
+
+<div>    width: 200px;</div>
+
+<div>    margin: 20px 0;</div>
+
+<div>    transition: 0.5s ease;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  .buttons {</div>
+
+<div>    display: flex;</div>
+
+<div>    justify-content: center;</div>
+
+<div>    gap: 20px;</div>
+
+<div>    margin-top: 15px;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  button {</div>
+
+<div>    padding: 15px 25px;</div>
+
+<div>    border: none;</div>
+
+<div>    border-radius: 50px;</div>
+
+<div>    font-size: 1.2rem;</div>
+
+<div>    cursor: pointer;</div>
+
+<div>    transition: 0.3s ease;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  #yesBtn {</div>
+
+<div>    background: #ff2d75;</div>
+
+<div>    color: white;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  #noBtn {</div>
+
+<div>    background: #888;</div>
+
+<div>    color: white;</div>
+
+<div>  }</div>
+
+<div> </div>
+
+<div>  .caption {</div>
+
+<div>    margin-bottom: 20px;</div>
+
+<div>    font-size: 2rem;</div>
+
+<div>    color: #d1005c;</div>
+
+<div>    display: none;</div>
+
+<div>    font-weight: bold;</div>
+
+<div>  }</div>
+
+<div></style></div>
+
+<div></head></div>
+
+<div> </div>
+
+<div><body></div>
+
+<div> </div>
+
+<div><div class="container" id="container"></div>
+
+<div>  <h1 id="title">Will you be my Meowlentine? 💘😻</h1></div>
+
+<div> </div>
+
+<div>  <!-- Celebration caption above GIF --></div>
+
+<div>  <div class="caption" id="caption">Yaaaaay! Thanks ❤️💘</div></div>
+
+<div> </div>
+
+<div>  <!-- Initial GIF --></div>
+
+<div>  <img id="mainGif" src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyeG53OGRpZno3MHYzbzMwZ2E1cDQ5YWhvZXRqMXJyOXNmemQwZzk5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y93x7gLXTO5dnSWCEI/giphy.gif" class="gif"></div>
+
+<div> </div>
+
+<div>  <div class="buttons"></div>
+
+<div>    <button id="yesBtn">Yes 💕</button></div>
+
+<div>    <button id="noBtn">No 😿</button></div>
+
+<div>  </div></div>
+
+<div></div></div>
+
+<div> </div>
+
+<div><script></div>
+
+<div>  const yesBtn = document.getElementById("yesBtn");</div>
+
+<div>  const noBtn = document.getElementById("noBtn");</div>
+
+<div>  const gif = document.getElementById("mainGif");</div>
+
+<div>  const caption = document.getElementById("caption");</div>
+
+<div>  const title = document.getElementById("title");</div>
+
+<div> </div>
+
+<div>  let yesSize = 1.2;</div>
+
+<div>  let noSize = 1.2;</div>
+
+<div>  let clicks = 0;</div>
+
+<div> </div>
+
+<div>  noBtn.addEventListener("click", () => {</div>
+
+<div>    clicks++;</div>
+
+<div>    yesSize += 0.4;</div>
+
+<div>    noSize -= 0.3;</div>
+
+<div> </div>
+
+<div>    yesBtn.style.fontSize = yesSize + "rem";</div>
+
+<div>    yesBtn.style.padding = (15 + clicks*5) + "px " + (25 + clicks*10) + "px";</div>
+
+<div> </div>
+
+<div>    noBtn.style.fontSize = noSize + "rem";</div>
+
+<div>    noBtn.style.padding = (15 - clicks*2) + "px " + (25 - clicks*4) + "px";</div>
+
+<div> </div>
+
+<div>    if(noSize <= 0.5){</div>
+
+<div>      noBtn.style.display = "none";</div>
+
+<div>    }</div>
+
+<div>  });</div>
+
+<div> </div>
+
+<div>  yesBtn.addEventListener("click", () => {</div>
+
+<div>    title.style.display = "none";</div>
+
+<div>    yesBtn.style.display = "none";</div>
+
+<div>    noBtn.style.display = "none";</div>
+
+<div> </div>
+
+<div>    gif.src = "https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyZmdkNGQ4dGNtenlhOGN2NHdwNHBjdG1wbDYxcGRrNWVpazh6cjd6NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/h20IwOYYJgCMbj4uaD/giphy.gif";</div>
+
+<div>    gif.style.width = "300px";</div>
+
+<div>    caption.style.display = "block";</div>
+
+<div>  });</div>
+
+<div></script></div>
+
+<div> </div>
+
+<div></body></div>
+
+<div></html></div>
